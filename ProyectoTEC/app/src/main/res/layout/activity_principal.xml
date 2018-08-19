@@ -18,63 +18,65 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="268dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fondo"
-            android:scaleType="centerInside"   />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usuario:"
             android:id="@+id/nombreUsuario"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="120dp"
-            android:textColor="#B71C1C"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
-        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="41dp"
+            android:text="Usuario:"
+            android:textColor="#B71C1C"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/idUsuario"
-            android:hint="Ingrese usuario"
-            android:layout_marginTop="85dp"
-            android:layout_marginLeft="120dp" />
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/nombreUsuario"
+            android:layout_marginTop="80dp"
+            android:hint="Ingrese usuario" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/nombreUsuario"
+            android:layout_marginBottom="97dp"
             android:text="Contraseña:"
-            android:layout_marginTop="140dp"
-            android:layout_marginLeft="120dp"
             android:textColor="#B71C1C"
-            android:textStyle="bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/idPassword"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/nombreUsuario"
+            android:layout_marginBottom="33dp"
             android:hint="Ingrese contraseña"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="120dp"/>
+            android:inputType="textPassword" />
     </RelativeLayout>
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Iniciar Sesion"
         android:id="@+id/iniciarSesion"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#B71C1C"
-        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="35dp"
+        android:background="@drawable/text_view_circular"
+        android:gravity="center"
         android:padding="15dp"
-        android:textSize="20sp"
-        />
+        android:text="Iniciar Sesion"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>

@@ -22,25 +22,24 @@
         android:text="Scan QR"
         android:id="@+id/ScanQr"
         android:layout_marginTop="15dp"
-        android:background="#B71C1C"
+        android:background="@drawable/text_view_circular"
         android:textColor="@android:color/white"
         android:padding="15dp"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:onClick="btnScan"/>
+        android:textStyle="bold"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Siguiente"
         android:id="@+id/opcionBuscarLista"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:background="#B71C1C"
-        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="35dp"
+        android:background="@drawable/text_view_circular"
+        android:gravity="center"
         android:padding="15dp"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:text="Siguiente"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
 
 
