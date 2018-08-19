@@ -16,6 +16,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="Menu" />
+        <activity
+            android:name=".MiListaActivity"
+            android:label="Mi Lista" />
+        <activity
+            android:name=".UbicacionActivity"
+            android:label="Ubicacion" />
+        <activity
+            android:name=".OfertasActivity"
+            android:label="Ofertas" />
+        <activity
+            android:name=".BuscarListaActivity"
+            android:label="Buscar Lista" />
+        <activity
+            android:name=".ListaOrdenadaActivity"
+            android:label="Lista Ordenada" />
+        <activity
+            android:name=".NuevaListaActivity"
+            android:label="Nueva Lista" />
+        <activity
+            android:name=".ModificarListaActivity"
+            android:label="Modificar Lista" />
+        <activity
+            android:name=".EnviarListaActivity"
+            android:label="Enviar Lista" />
+        <activity
+            android:name=".FotoFacturaActivity"
+            android:label="Foto Factura" />
+        <activity android:name=".CategoriasActivity" />
+        <activity android:name=".FrutasVerdurasActivity" />
+        <activity android:name=".SalsasActivity"></activity>
     </application>
 
 </manifest>

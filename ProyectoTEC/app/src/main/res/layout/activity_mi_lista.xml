@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8E1"
+    tools:context=".MiListaActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/banner2"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Nueva Lista"
+        android:id="@+id/menuNuevaLista"
+        android:background="#26A69A"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Modificar Lista"
+        android:id="@+id/menuModificarLista"
+        android:background="#F44336"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Enviar Lista"
+        android:id="@+id/menuEnviarLista"
+        android:background="#43A047"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Foto Factura"
+        android:id="@+id/menuFotoFactura"
+        android:background="#00B0FF"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>

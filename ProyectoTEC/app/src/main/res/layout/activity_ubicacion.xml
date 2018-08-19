@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8E1"
+    tools:context=".UbicacionActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/banner2"
+        android:scaleType="centerCrop"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Scan QR"
+        android:id="@+id/ScanQr"
+        android:layout_marginTop="15dp"
+        android:background="#B71C1C"
+        android:textColor="@android:color/white"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:onClick="btnScan"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Siguiente"
+        android:id="@+id/opcionBuscarLista"
+        android:layout_marginTop="250dp"
+        android:background="#B71C1C"
+        android:textColor="@android:color/white"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+</LinearLayout>
