@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CategoriasActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/banner2"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Frutas y Verduras"
+        android:id="@+id/menuFrutasVerduras"
+        android:background="#9CCC65"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Salsas"
+        android:id="@+id/menuSalsas"
+        android:background="#FF8A65"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bebidas"
+        android:id="@+id/menuBebidas"
+        android:background="#40C4FF"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Carnes"
+        android:id="@+id/menuCarnes"
+        android:background="#F44336"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mariscos"
+        android:id="@+id/menuMariscos"
+        android:background="#FFA726"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Boquitas"
+        android:id="@+id/menuBoquitas"
+        android:background="#EC407A"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
