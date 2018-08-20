@@ -8,9 +8,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import Preference.PreferenceManager;
+
 public class PrincipalActivity extends AppCompatActivity {
+
+    TextView InicioSesion;
+    EditText user, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,17 +24,25 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         //Inicia sesion y lleva al activity Menu
-        TextView sesion =(TextView)findViewById(R.id.iniciarSesion);
+        InicioSesion =(TextView)findViewById(R.id.iniciarSesion);
+        user = (EditText)findViewById(R.id.idUsuario);
+        password = (EditText)findViewById(R.id.idPassword);
+
         //Asigna un clicklistener al activity Menu
-        sesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Crea un intent para abrir {@link MenuActivity}
-                Intent sesionIntent = new Intent(PrincipalActivity.this,MenuActivity.class );
-                //Inicia un nuevo activity
-                startActivity(sesionIntent);
-            }
-        });
+
+        if((PreferenceManager.checkPref(this,PreferenceManager.PREF_USERNAME)) && (PreferenceManager.checkPref(this,PreferenceManager.PREF_PASSWORD)))
+        {
+            Intent _LogIn = new Intent(PrincipalActivity.this, MenuActivity.class);
+            startActivity(_LogIn);
+        }
+        else {
+            InicioSesion.setOnClickListener(compoundButton -> {
+                Intent _LogOut = new Intent(PrincipalActivity.this, MenuActivity.class);
+                startActivity(_LogOut);
+                PreferenceManager.setPref(compoundButton.getContext(),PreferenceManager.PREF_USERNAME,"1");
+                PreferenceManager.setPref(compoundButton.getContext(),PreferenceManager.PREF_PASSWORD,"1");
+            });
+        }
 
     }
 
