@@ -1,18 +1,27 @@
 package com.proyectotec.kevin.proyectotec;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class ModificarListaActivity extends AppCompatActivity {
 
+    RecyclerView recyclerViewListas;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
+
+        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewListas.setAdapter(new clases.AdapterListas(this,NuevaListaActivity.Listas, NuevaListaActivity.nombreLista));
     }
 
     @Override

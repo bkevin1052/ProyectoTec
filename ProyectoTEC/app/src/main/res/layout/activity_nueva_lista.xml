@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/idNombreLista"
-        android:hint="ingrese nombre lista"
+        android:hint="Ingrese nombre lista"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         />
