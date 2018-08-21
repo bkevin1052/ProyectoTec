@@ -29,10 +29,6 @@ public class BuscarListaActivity extends AppCompatActivity {
         TextView opcionBuscarLista =(TextView)findViewById(R.id.BuscarLista);
         //Asigna un clicklistener al activity Lista Ordenada
         opcionBuscarLista.setOnClickListener(view -> {
-            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
-            recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
-            adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
-            recyclerViewListas.setAdapter(adapter);
         });
 
         TextView opcionVerTodasListas = (TextView)findViewById(R.id.botonVerTodasLista);

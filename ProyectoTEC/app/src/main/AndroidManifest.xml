@@ -45,7 +45,7 @@
             android:label="Foto de Factura" />
         <activity android:name=".CategoriasActivity" />
         <activity android:name=".FrutasVerdurasActivity" />
-        <activity android:name=".SalsasActivity"></activity>
+        <activity android:name=".SalsasActivity" />
     </application>
 
 </manifest>
