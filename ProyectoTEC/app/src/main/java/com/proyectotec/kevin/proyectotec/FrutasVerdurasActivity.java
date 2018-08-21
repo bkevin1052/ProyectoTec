@@ -44,6 +44,7 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
         recyclerViewProductos.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,listaFrutasVerduras);
         recyclerViewProductos.setAdapter(adapter);
+
     }
 
     @Override

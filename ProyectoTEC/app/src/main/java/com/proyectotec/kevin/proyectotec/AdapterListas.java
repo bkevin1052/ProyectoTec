@@ -55,4 +55,5 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
             textViewCantidad = itemView.findViewById(R.id.cantidad);
         }
     }
+
 }
