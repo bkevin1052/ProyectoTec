@@ -32,9 +32,6 @@
             android:name=".BuscarListaActivity"
             android:label="Buscar Lista" />
         <activity
-            android:name=".ListaOrdenadaActivity"
-            android:label="Lista Ordenada" />
-        <activity
             android:name=".NuevaListaActivity"
             android:label="Nueva Lista" />
         <activity

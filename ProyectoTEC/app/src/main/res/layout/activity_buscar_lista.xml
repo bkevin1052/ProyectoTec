@@ -47,14 +47,14 @@
 
     <EditText
         android:id="@+id/idBuscaLista"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:hint="Ingrese nombre" />
 
     <TextView
-        android:id="@+id/ordenarLista"
+        android:id="@+id/BuscarLista"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -62,7 +62,7 @@
         android:background="@drawable/text_view_circular"
         android:gravity="center"
         android:padding="15dp"
-        android:text="Ordenar Lista"
+        android:text="Buscar Lista"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         />

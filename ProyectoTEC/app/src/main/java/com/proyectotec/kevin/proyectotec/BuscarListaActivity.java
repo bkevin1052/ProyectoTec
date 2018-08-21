@@ -1,35 +1,49 @@
 package com.proyectotec.kevin.proyectotec;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class BuscarListaActivity extends AppCompatActivity {
+
+    RecyclerView recyclerViewListas;
+    AdapterListas adapter;
+
+    EditText buscador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_lista);
 
+        buscador = (EditText) findViewById(R.id.idBuscaLista);
+
         //Lleva al activity ListaOrdenada
-        TextView opcionOrdenar =(TextView)findViewById(R.id.ordenarLista);
+        TextView opcionBuscarLista =(TextView)findViewById(R.id.BuscarLista);
         //Asigna un clicklistener al activity Lista Ordenada
-        opcionOrdenar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Crea un intent para abrir {@link ListaOrdenadaActivity}
-                Intent ordenarIntent = new Intent(BuscarListaActivity.this, ListaOrdenadaActivity.class );
-                //Inicia el activity ListaOrdenada
-                startActivity(ordenarIntent);
-            }
+        opcionBuscarLista.setOnClickListener(view -> {
+            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+            recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
+            recyclerViewListas.setAdapter(adapter);
         });
 
+        TextView opcionVerTodasListas = (TextView)findViewById(R.id.botonVerTodasLista);
+
+        opcionVerTodasListas.setOnClickListener(view->{
+            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+            recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
+            recyclerViewListas.setAdapter(adapter);
+            opcionBuscarLista.setEnabled(false);
+        });
 
     }
 
