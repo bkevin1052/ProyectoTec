@@ -17,9 +17,10 @@ import clases.Producto;
 
 public class SalsasActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView recyclerViewProductos;
+    AdapterProducto adapter;
 
-    List<Producto> items = new ArrayList<Producto>();
+    List<Producto> listaSalsas = new ArrayList<>();
     Date fecha;
 
     //Simulacion de objetos o base de datos
@@ -33,14 +34,15 @@ public class SalsasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salsas);
-        items.add(salsa1);
-        items.add(salsa2);
-        items.add(salsa3);
-        items.add(salsa4);
+        listaSalsas.add(salsa1);
+        listaSalsas.add(salsa2);
+        listaSalsas.add(salsa3);
+        listaSalsas.add(salsa4);
 
-        recyclerView = (RecyclerView)findViewById(R.id.RecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new clases.Adapter(this,items));
+        recyclerViewProductos = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewProductos.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterProducto(this,listaSalsas);
+        recyclerViewProductos.setAdapter(adapter);
     }
 
     @Override

@@ -24,8 +24,8 @@ public class NuevaListaActivity extends AppCompatActivity {
     List<Producto> nuevaLista;
 
     //Listas creadas almacenadas
-    public static List<List> Listas = new ArrayList<List>();
-    public static List<String> nombreLista = new ArrayList<String>();
+    public static List<List> Listas = new ArrayList<>();
+    public static List<String> nombreLista = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class NuevaListaActivity extends AppCompatActivity {
         nombreNuevaLista = (EditText)findViewById(R.id.idNombreLista);
         crearLista = (TextView)findViewById(R.id.crearLista);
 
-        String nNuevaLista = nombreNuevaLista.getText().toString();
 
         crearLista.setOnClickListener(view ->{
-            nuevaLista = new ArrayList<Producto>();
+            String nNuevaLista = nombreNuevaLista.getText().toString();
+            nuevaLista = new ArrayList<>();
             Listas.add(nuevaLista);
             nombreLista.add(nNuevaLista);
             Intent _Categorias = new Intent(NuevaListaActivity.this, CategoriasActivity.class);

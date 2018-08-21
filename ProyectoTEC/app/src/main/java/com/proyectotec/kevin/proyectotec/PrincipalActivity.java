@@ -6,14 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import Preference.PreferenceManager;
 
 public class PrincipalActivity extends AppCompatActivity {
 
-    public static List<List> ListasUsuario = new ArrayList<List>();
+    //public static List<List> ListasUsuario = new ArrayList<>();
     TextView InicioSesion;
     EditText user, password;
 

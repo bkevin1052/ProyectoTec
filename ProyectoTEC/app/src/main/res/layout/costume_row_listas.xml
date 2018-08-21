@@ -32,7 +32,7 @@
 
 
             <TextView
-                android:id="@+id/precio"
+                android:id="@+id/cantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/titulo"
@@ -43,20 +43,6 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="4.7"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/simbolo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/titulo"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_toLeftOf="@id/precio"
-                android:background="@color/colorPrimary"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="Q"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
                 android:textStyle="bold" />
 

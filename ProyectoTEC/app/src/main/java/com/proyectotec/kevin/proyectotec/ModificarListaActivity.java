@@ -12,6 +12,8 @@ import android.view.MenuItem;
 public class ModificarListaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewListas;
+    AdapterListas adapter;
+
 
 
     @Override
@@ -21,7 +23,10 @@ public class ModificarListaActivity extends AppCompatActivity {
 
         recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
         recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewListas.setAdapter(new clases.AdapterListas(this,NuevaListaActivity.Listas, NuevaListaActivity.nombreLista));
+        adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
+        recyclerViewListas.setAdapter(adapter);
+
+
     }
 
     @Override
