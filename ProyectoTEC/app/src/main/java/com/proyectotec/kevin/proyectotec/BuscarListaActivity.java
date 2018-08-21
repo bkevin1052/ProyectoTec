@@ -42,7 +42,6 @@ public class BuscarListaActivity extends AppCompatActivity {
             recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
             adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
             recyclerViewListas.setAdapter(adapter);
-            opcionBuscarLista.setEnabled(false);
         });
 
     }

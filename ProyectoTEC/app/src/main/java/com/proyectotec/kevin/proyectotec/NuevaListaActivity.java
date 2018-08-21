@@ -44,7 +44,7 @@ public class NuevaListaActivity extends AppCompatActivity {
             Intent _Categorias = new Intent(NuevaListaActivity.this, CategoriasActivity.class);
             startActivity(_Categorias);
         });
-        
+
 
     }
 
