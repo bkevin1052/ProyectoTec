@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Zuper</string>
+
+    <string name="id_correo">&#xf0e0;</string>
+    <string name="id_camara">&#xf030;</string>
+
+
 </resources>

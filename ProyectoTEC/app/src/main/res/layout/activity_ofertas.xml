@@ -18,33 +18,45 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:text="Folleto de Ofertas"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Walmart"
         android:id="@+id/menuWalmart"
         android:background="@drawable/text_view_circular_ofertas_walmart"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="La Torre"
         android:id="@+id/menuLaTorre"
         android:background="@drawable/text_view_circular_ofertas_latorre"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:textStyle="bold"
         android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="MaxiDespensa"
         android:id="@+id/menuMaxiDespensa"
         android:background="@drawable/text_view_circular_ofertas_maxidespensa"
@@ -52,6 +64,7 @@
         android:textSize="25sp"
         android:padding="10dp"
         android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center" />
 
 </LinearLayout>

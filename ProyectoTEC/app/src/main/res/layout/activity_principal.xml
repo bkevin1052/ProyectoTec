@@ -12,63 +12,51 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:src="@drawable/zuper_ver1"
-        android:scaleType="centerInside"
-        android:layout_gravity="center" />
+        android:src="@drawable/banner2"
+        android:scaleType="centerCrop"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="268dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="#B71C1C"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
+    <EditText
+        android:id="@+id/idUsuario"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="20sp"
+        android:hint="Ingrese usuario" />
 
-        <TextView
-            android:id="@+id/nombreUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="38dp"
-            android:layout_marginTop="41dp"
-            android:text="Usuario:"
-            android:textColor="#B71C1C"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:textColor="#B71C1C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"/>
 
-        <EditText
-            android:id="@+id/idUsuario"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/nombreUsuario"
-            android:layout_marginTop="80dp"
-            android:hint="Ingrese usuario" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/nombreUsuario"
-            android:layout_marginBottom="97dp"
-            android:text="Contraseña:"
-            android:textColor="#B71C1C"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/idPassword"
-            android:layout_width="286dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/nombreUsuario"
-            android:layout_marginBottom="33dp"
-            android:hint="Ingrese contraseña"
-            android:inputType="textPassword" />
-    </RelativeLayout>
-
+    <EditText
+        android:id="@+id/idPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="20sp"
+        android:hint="Ingrese contraseña"
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/iniciarSesion"
-        android:layout_width="316dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="35dp"
@@ -77,6 +65,7 @@
         android:padding="15dp"
         android:text="Iniciar Sesion"
         android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
 </LinearLayout>

@@ -14,12 +14,33 @@
         android:layout_height="80dp"
         android:src="@drawable/banner2"
         android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar lista"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
+
+    <com.proyectotec.kevin.proyectotec.IconFont
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id_correo"
+        android:textSize="45sp"
+        android:layout_margin="10dp"
+        android:textColor="#B71C1C"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        />
+
 
 
 </LinearLayout>
