@@ -20,7 +20,7 @@ public class EnviarListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enviar_lista);
 
-        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewEnviarLista);
         recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
         recyclerViewListas.setAdapter(adapter);

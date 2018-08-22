@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasViewHolder> {
+public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasViewHolder> implements View.OnClickListener {
 
     private Context miContexto;
     private List<List> listasUsuario;
     private List<String> listasNombre;
+    private View.OnClickListener listener;
+
 
     public AdapterListas(Context miContexto, List<List> listasUsuario,List<String> listasNombre) {
         this.miContexto = miContexto;
@@ -28,6 +30,7 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
         LayoutInflater inflater = LayoutInflater.from(miContexto);
         View view = inflater.inflate(R.layout.costume_row_listas,null);
         ListasViewHolder holder = new ListasViewHolder(view);
+        view.setOnClickListener(this);
         return holder;
     }
 
@@ -37,7 +40,6 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
         String listaNombre = listasNombre.get(position).toString();
         holder.textViewTitulo.setText(listaNombre);
         holder.textViewCantidad.setText(String.valueOf(getItemCount()));
-
     }
 
     @Override
@@ -46,13 +48,25 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
     }
 
     class ListasViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewTitulo, textViewCantidad;
+
+        TextView textViewTitulo,textViewCantidad;
 
         public ListasViewHolder(View itemView) {
             super(itemView);
-
             textViewTitulo = itemView.findViewById(R.id.titulo);
             textViewCantidad = itemView.findViewById(R.id.cantidad);
+        }
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if(listener!= null){
+            listener.onClick(view);
         }
     }
 

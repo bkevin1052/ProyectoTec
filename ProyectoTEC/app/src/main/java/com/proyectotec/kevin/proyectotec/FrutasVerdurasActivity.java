@@ -1,13 +1,14 @@
 package com.proyectotec.kevin.proyectotec;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,10 +25,12 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
     Date fecha;
 
     //Simulacion de objetos o base de datos
-    Producto fruta1 = new Producto("Frutas y Verduras",10.00,"Manzana","5oz",0,fecha);
-    Producto fruta2 = new Producto("Frutas y Verduras",12.00,"Banano","32oz",0,fecha);
-    Producto fruta3 = new Producto("Frutas y Verduras",15.00,"Guayaba","5oz",0,fecha);
-    Producto fruta4 = new Producto("Frutas y Verduras",11.00,"Sandia","64oz",0,fecha);
+    Producto fruta1 = new Producto("Frutas y Verduras",10.00,"Manzana","5oz",0,fecha,R.drawable.manzana);
+    Producto fruta2 = new Producto("Frutas y Verduras",12.00,"Banano","32oz",0,fecha,R.drawable.banano);
+    Producto fruta3 = new Producto("Frutas y Verduras",15.00,"Guayaba","5oz",0,fecha,R.drawable.guayaba);
+    Producto fruta4 = new Producto("Frutas y Verduras",11.00,"Sandia","64oz",0,fecha,R.drawable.sandia);
+
+    public static int contadorFrutaVerdura;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +43,17 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
         listaFrutasVerduras.add(fruta4);
 
 
-        recyclerViewProductos = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewProductos = (RecyclerView)findViewById(R.id.RecyclerViewFrutaVerdura);
         recyclerViewProductos.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,listaFrutasVerduras);
+        adapter.setOnClickListener(view -> {
+            NuevaListaActivity.Listas.get(NuevaListaActivity.contadorListas).add(listaFrutasVerduras.get(recyclerViewProductos.getChildAdapterPosition(view)));
+            Toast.makeText(getApplicationContext(),"ELEMENTO AGREGADO CORRECTAMENTE" ,Toast.LENGTH_LONG).show();
+            contadorFrutaVerdura++;
+        });
         recyclerViewProductos.setAdapter(adapter);
+
+
 
     }
 

@@ -10,14 +10,17 @@ public class Producto {
     private String tamanio;
     private Integer id;
     private Date fechaCaducidad;
+    private int imagen;
 
-    public Producto(String categoria, double precio, String marca, String tamanio, Integer id, Date fechaCaducidad){
+
+    public Producto(String categoria, double precio, String marca, String tamanio, Integer id, Date fechaCaducidad, int imagen){
         this.setCategoria(categoria);
         this.setPrecio(precio);
         this.setMarca(marca);
         this.setTamanio(tamanio);
         this.setId(id);
         this.setFechaCaducidad(fechaCaducidad);
+        this.imagen = imagen;
     }
 
     public String getCategoria() {
@@ -67,4 +70,14 @@ public class Producto {
     public void setFechaCaducidad(Date fechaCaducidad) {
         this.fechaCaducidad = fechaCaducidad;
     }
+
+    public int getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
+
+
 }

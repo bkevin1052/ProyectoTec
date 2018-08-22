@@ -26,6 +26,7 @@ public class NuevaListaActivity extends AppCompatActivity {
     //Listas creadas almacenadas
     public static List<List> Listas = new ArrayList<>();
     public static List<String> nombreLista = new ArrayList<>();
+    public static int contadorListas = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class NuevaListaActivity extends AppCompatActivity {
             nombreLista.add(nNuevaLista);
             Intent _Categorias = new Intent(NuevaListaActivity.this, CategoriasActivity.class);
             startActivity(_Categorias);
+            contadorListas++;
         });
 
 

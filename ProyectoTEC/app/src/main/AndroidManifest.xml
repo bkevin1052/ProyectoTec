@@ -46,6 +46,7 @@
         <activity android:name=".CategoriasActivity" />
         <activity android:name=".FrutasVerdurasActivity" />
         <activity android:name=".SalsasActivity" />
+        <activity android:name=".VistaModificarLista"></activity>
     </application>
 
 </manifest>
