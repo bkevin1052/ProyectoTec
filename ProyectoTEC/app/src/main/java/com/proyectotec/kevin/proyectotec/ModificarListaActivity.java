@@ -34,12 +34,12 @@ public class ModificarListaActivity extends AppCompatActivity {
             startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
         });
 
-        opcionVerTodasLasListas.setOnClickListener(view -> {
+
+        //FALTA AGREGAR METODO PARA MOSTRAR TODAS LAS LISTAS
             recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
             recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
             adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
             recyclerViewModificarListas.setAdapter(adapter);
-        });
     }
 
     @Override
