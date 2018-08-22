@@ -18,21 +18,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="35dp"
         android:text="Nueva Lista"
         android:id="@+id/menuNuevaLista"
         android:background="@drawable/text_view_circular_mi_lista_nuevalista"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="Modificar Lista"
         android:id="@+id/menuModificarLista"
         android:background="@drawable/text_view_circular_mi_lista_modificarlista"
@@ -41,12 +41,13 @@
         android:padding="10dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="Enviar Lista"
         android:id="@+id/menuEnviarLista"
         android:background="@drawable/text_view_circular_mi_lista_enviarlista"
@@ -55,12 +56,27 @@
         android:padding="10dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
+        android:text="Buscar Lista"
+        android:id="@+id/menuBuscarLista"
+        android:background="@drawable/text_view_circular_mi_lista_buscar_lista"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="Foto Factura"
         android:id="@+id/menuFotoFactura"
         android:background="@drawable/text_view_circular_mi_lista_fotofactura"
@@ -69,19 +85,8 @@
         android:padding="10dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Buscar Lista"
-        android:id="@+id/menuBuscarLista"
-        android:background="@drawable/text_view_circular_mi_lista_enviarlista"
-        android:textColor="@android:color/white"
-        android:textSize="25sp"
-        android:padding="10dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        />
+
 
 </LinearLayout>

@@ -16,36 +16,101 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MenuActivity"
-            android:label="Menu" />
+
+        <activity  android:name=".MenuActivity"/>
+
         <activity
             android:name=".MiListaActivity"
-            android:label="Mi Lista" />
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity"/>
+        </activity>
         <activity
             android:name=".UbicacionActivity"
-            android:label="Ubicacion" />
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity"/>
+        </activity>
         <activity
             android:name=".OfertasActivity"
-            android:label="Ofertas" />
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity"/>
+        </activity>
+
         <activity
             android:name=".BuscarListaActivity"
-            android:label="Buscar Lista" />
+            android:parentActivityName=".MiListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MiListaActivity"/>
+            </activity>
         <activity
             android:name=".NuevaListaActivity"
-            android:label="Nueva Lista" />
+            android:parentActivityName=".MiListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MiListaActivity"/>
+        </activity>
         <activity
             android:name=".ModificarListaActivity"
-            android:label="Modificar Lista" />
+            android:parentActivityName=".MiListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MiListaActivity"/>
+        </activity>
         <activity
             android:name=".EnviarListaActivity"
-            android:label="Enviar Lista" />
+            android:parentActivityName=".MiListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MiListaActivity"/>
+        </activity>
         <activity
             android:name=".FotoFacturaActivity"
-            android:label="Foto de Factura" />
-        <activity android:name=".CategoriasActivity" />
-        <activity android:name=".FrutasVerdurasActivity" />
-        <activity android:name=".SalsasActivity" />
+            android:parentActivityName=".MiListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MiListaActivity"    />
+        </activity>
+
+        <activity
+            android:name=".CategoriasActivity"
+            android:parentActivityName=".NuevaListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NuevaListaActivity"/>
+        </activity>
+
+        <activity
+            android:name=".FrutasVerdurasActivity"
+            android:parentActivityName=".CategoriasActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".CategoriasActivity"/>
+        </activity>
+        <activity
+            android:name=".SalsasActivity"
+            android:parentActivityName=".CategoriasActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CategoriasActivity"/>
+        </activity>
+
+        <activity android:name=".ListaActivity" />
+
+        <activity
+            android:name=".WalmartActivity"
+            android:parentActivityName=".OfertasActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OfertasActivity"/>
+        </activity>
+
+
     </application>
 
 </manifest>

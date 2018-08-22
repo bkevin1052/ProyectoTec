@@ -9,4 +9,32 @@
     android:background="#FFF8E1"
     tools:context=".FotoFacturaActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/banner2"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Foto Factura"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
+
+    <com.proyectotec.kevin.proyectotec.IconFont
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id_camara"
+        android:textSize="45sp"
+        android:layout_margin="10dp"
+        android:textColor="#B71C1C"
+        android:layout_gravity="center"
+        />
+
+
+
 </LinearLayout>
