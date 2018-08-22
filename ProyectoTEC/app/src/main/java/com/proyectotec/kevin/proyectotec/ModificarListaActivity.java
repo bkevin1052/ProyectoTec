@@ -9,24 +9,31 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import clases.Producto;
+
 public class ModificarListaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewListas;
     AdapterListas adapter;
 
-
-
+    public static List<Producto> listaTemporal = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
 
-        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewModificarLista);
         recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
         recyclerViewListas.setAdapter(adapter);
 
-
+        adapter.setOnClickListener(view -> {
+            listaTemporal= NuevaListaActivity.Listas.get(recyclerViewListas.getChildAdapterPosition(view));
+            startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
+        });
     }
 
     @Override

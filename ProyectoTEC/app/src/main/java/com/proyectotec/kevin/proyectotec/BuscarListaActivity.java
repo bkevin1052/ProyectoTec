@@ -34,7 +34,7 @@ public class BuscarListaActivity extends AppCompatActivity {
         TextView opcionVerTodasListas = (TextView)findViewById(R.id.botonVerTodasLista);
 
         opcionVerTodasListas.setOnClickListener(view->{
-            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerView);
+            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewVerTodas);
             recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
             adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
             recyclerViewListas.setAdapter(adapter);

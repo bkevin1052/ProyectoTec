@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,12 +25,13 @@ public class SalsasActivity extends AppCompatActivity {
     Date fecha;
 
     //Simulacion de objetos o base de datos
-    Producto salsa1 = new Producto("Salsas",10.00,"Kerns","16oz",0,fecha);
-    Producto salsa2 = new Producto("Salsas",12.00,"Heinz","16oz",0,fecha);
-    Producto salsa3 = new Producto("Salsas",15.00,"McCormick","16oz",0,fecha);
-    Producto salsa4 = new Producto("Salsas",11.00,"B&B","16oz",0,fecha);
+    Producto salsa1 = new Producto("Salsas",10.00,"Kerns","16oz",0,fecha,R.drawable.kerns);
+    Producto salsa2 = new Producto("Salsas",12.00,"Heinz","16oz",0,fecha,R.drawable.heinz);
+    Producto salsa3 = new Producto("Salsas",15.00,"McCormick","16oz",0,fecha,R.drawable.mccormink);
+    Producto salsa4 = new Producto("Salsas",11.00,"B&B","16oz",0,fecha,R.drawable.byb);
 
 
+    public static int contadorSalsas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +41,20 @@ public class SalsasActivity extends AppCompatActivity {
         listaSalsas.add(salsa3);
         listaSalsas.add(salsa4);
 
-        recyclerViewProductos = (RecyclerView)findViewById(R.id.RecyclerView);
+        recyclerViewProductos = (RecyclerView)findViewById(R.id.RecyclerViewSalsas);
         recyclerViewProductos.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,listaSalsas);
+        adapter.setOnClickListener(view -> {
+            NuevaListaActivity.Listas.get(NuevaListaActivity.contadorListas).add(listaSalsas.get(recyclerViewProductos.getChildAdapterPosition(view)));
+            Toast.makeText(getApplicationContext(),"ELEMENTO AGREGADO CORRECTAMENTE" ,Toast.LENGTH_LONG).show();
+            contadorSalsas++;
+        });
         recyclerViewProductos.setAdapter(adapter);
+
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
