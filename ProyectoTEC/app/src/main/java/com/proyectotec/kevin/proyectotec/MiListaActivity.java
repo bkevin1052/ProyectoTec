@@ -51,6 +51,13 @@ public class MiListaActivity extends AppCompatActivity {
             startActivity(opcion14Intent);
         });
 
+        TextView opcion15 = (TextView)findViewById(R.id.menuFotoFactura);
+
+        opcion15.setOnClickListener(view -> {
+            Intent opcion15Intent = new Intent(MiListaActivity.this, FotoFacturaActivity.class );
+            startActivity(opcion15Intent);
+        });
+
 
     }
 

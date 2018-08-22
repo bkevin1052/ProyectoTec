@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import clases.Producto;
 
 public class ModificarListaActivity extends AppCompatActivity {
 
-    RecyclerView recyclerViewListas;
+    RecyclerView recyclerViewModificarListas;
     AdapterListas adapter;
 
     public static List<Producto> listaTemporal = new ArrayList<>();
@@ -27,18 +27,18 @@ public class ModificarListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
 
-        Button opcionVerTodasListas2 = (Button)findViewById(R.id.botonVerTodasLista2);
-
-        opcionVerTodasListas2.setOnClickListener(view -> {
-        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewModificarLista);
-        recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
-        recyclerViewListas.setAdapter(adapter);
-        });
+        TextView opcionVerTodasLasListas = (TextView) findViewById(R.id.opcionVerTodasLista2);
 
         adapter.setOnClickListener(view -> {
-            listaTemporal= NuevaListaActivity.Listas.get(recyclerViewListas.getChildAdapterPosition(view));
+            listaTemporal= NuevaListaActivity.Listas.get(recyclerViewModificarListas.getChildAdapterPosition(view));
             startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
+        });
+
+        opcionVerTodasLasListas.setOnClickListener(view -> {
+            recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
+            recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
+            recyclerViewModificarListas.setAdapter(adapter);
         });
     }
 
