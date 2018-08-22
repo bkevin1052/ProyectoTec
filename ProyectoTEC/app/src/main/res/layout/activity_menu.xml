@@ -18,13 +18,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:text="Menu"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Mi Lista"
         android:id="@+id/menuMiLista"
         android:background="@drawable/text_view_circular_menu_milista"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center"
         android:textStyle="bold"
         />
@@ -39,6 +49,7 @@
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center"
         android:textStyle="bold"
         />
@@ -53,6 +64,7 @@
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
         android:gravity="center"
         android:textStyle="bold"
         />
