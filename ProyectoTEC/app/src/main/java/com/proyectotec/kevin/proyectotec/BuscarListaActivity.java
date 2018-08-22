@@ -1,6 +1,5 @@
 package com.proyectotec.kevin.proyectotec;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,7 +15,6 @@ public class BuscarListaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewListas;
     AdapterListas adapter;
-
     EditText buscador;
 
     @Override
@@ -31,7 +30,7 @@ public class BuscarListaActivity extends AppCompatActivity {
         opcionBuscarLista.setOnClickListener(view -> {
         });
 
-        TextView opcionVerTodasListas = (TextView)findViewById(R.id.botonVerTodasLista);
+        Button opcionVerTodasListas = (Button) findViewById(R.id.botonVerTodasLista);
 
         opcionVerTodasListas.setOnClickListener(view->{
             recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewVerTodas);
@@ -59,10 +58,6 @@ public class BuscarListaActivity extends AppCompatActivity {
 
         }
         if(id==R.id.menu_contacto){
-
-        }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(BuscarListaActivity.this,EnviarListaActivity.class));
 
         }
         return super.onOptionsItemSelected(item);

@@ -14,10 +14,5 @@
         android:id="@+id/menu_contacto"
         android:title="Contáctanos"
         />
-    <item
-        android:id="@+id/menu_compartir"
-        android:title="Compartir"
-        app:showAsAction="always"
-        />
 
 </menu>

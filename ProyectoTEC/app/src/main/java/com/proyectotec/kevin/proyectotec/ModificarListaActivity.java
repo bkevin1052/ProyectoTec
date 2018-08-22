@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,15 +21,20 @@ public class ModificarListaActivity extends AppCompatActivity {
     AdapterListas adapter;
 
     public static List<Producto> listaTemporal = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
 
+        Button opcionVerTodasListas2 = (Button)findViewById(R.id.botonVerTodasLista2);
+
+        opcionVerTodasListas2.setOnClickListener(view -> {
         recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewModificarLista);
         recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
         recyclerViewListas.setAdapter(adapter);
+        });
 
         adapter.setOnClickListener(view -> {
             listaTemporal= NuevaListaActivity.Listas.get(recyclerViewListas.getChildAdapterPosition(view));
@@ -53,10 +59,6 @@ public class ModificarListaActivity extends AppCompatActivity {
 
         }
         if(id==R.id.menu_contacto){
-
-        }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(ModificarListaActivity.this,EnviarListaActivity.class));
 
         }
         return super.onOptionsItemSelected(item);

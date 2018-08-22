@@ -1,9 +1,8 @@
 package com.proyectotec.kevin.proyectotec;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -63,10 +62,6 @@ public class CategoriasActivity extends AppCompatActivity {
 
         }
         if(id==R.id.menu_contacto){
-
-        }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(CategoriasActivity.this,EnviarListaActivity.class));
 
         }
         return super.onOptionsItemSelected(item);

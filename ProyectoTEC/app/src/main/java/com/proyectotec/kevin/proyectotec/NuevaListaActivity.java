@@ -69,10 +69,6 @@ public class NuevaListaActivity extends AppCompatActivity {
         if(id==R.id.menu_contacto){
 
         }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(NuevaListaActivity.this,EnviarListaActivity.class));
-
-        }
         return super.onOptionsItemSelected(item);
     }
 }

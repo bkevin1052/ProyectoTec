@@ -73,10 +73,6 @@ public class MiListaActivity extends AppCompatActivity {
         if(id==R.id.menu_contacto){
 
         }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(MiListaActivity.this,EnviarListaActivity.class));
-
-        }
         return super.onOptionsItemSelected(item);
     }
 }

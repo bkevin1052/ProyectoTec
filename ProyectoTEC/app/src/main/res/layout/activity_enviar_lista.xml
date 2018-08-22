@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,34 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:src="@drawable/banner2"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar lista"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
         android:gravity="center"
-        android:textSize="35dp"
+        android:text="Enviar lista"
         android:textColor="#B71C1C"
-        android:textStyle="bold"
-        android:layout_marginBottom="5dp"/>
+        android:textSize="35dp"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerViewEnviarLista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <com.proyectotec.kevin.proyectotec.IconFont
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/id_correo"
-        android:textSize="45sp"
-        android:layout_margin="10dp"
-        android:textColor="#B71C1C"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="74dp" />
 
 
 
-</LinearLayout>
+</RelativeLayout>

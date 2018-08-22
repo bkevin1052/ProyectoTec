@@ -1,6 +1,5 @@
 package com.proyectotec.kevin.proyectotec;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -73,10 +72,6 @@ public class SalsasActivity extends AppCompatActivity {
 
         }
         if(id==R.id.menu_contacto){
-
-        }
-        if(id==R.id.menu_compartir){
-            startActivity(new Intent(SalsasActivity.this,EnviarListaActivity.class));
 
         }
         return super.onOptionsItemSelected(item);
