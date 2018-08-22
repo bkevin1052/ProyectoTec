@@ -57,7 +57,7 @@
             android:textSize="10sp"
             tools:ignore="OnClick" />
 
-        <TextView
+        <Button
             android:id="@+id/BuscarLista"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_margin="15dp"
             android:text="Buscar Lista"
             android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:textSize="10sp" />
 
 
 

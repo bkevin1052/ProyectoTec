@@ -7,12 +7,11 @@
         android:title="Configuración"
         />
     <item
-        android:id="@+id/menu_acerca"
-        android:title="Acerca de nosotros"
-        />
-    <item
         android:id="@+id/menu_contacto"
         android:title="Contáctanos"
         />
-
+    <item
+        android:id="@+id/menu_acerca"
+        android:title="Acerca de nosotros"
+        />
 </menu>

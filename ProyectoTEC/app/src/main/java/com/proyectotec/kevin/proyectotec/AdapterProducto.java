@@ -40,6 +40,8 @@ public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.Produc
         Producto producto = listaProductos.get(position);
         holder.textViewTitulo.setText(producto.getMarca());
         holder.textViewPrecio.setText(String.valueOf(producto.getPrecio()));
+        holder.textViewDetalles.setText(producto.getCategoria()+ "\n" +
+        producto.getFechaCaducidad() + "\n" + producto.getTamanio());
         holder.imageView.setImageDrawable(miContexto.getResources().getDrawable(producto.getImagen()));
     }
 
@@ -62,7 +64,7 @@ public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.Produc
 
 
     class ProductoViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewTitulo, textViewPrecio;
+        TextView textViewTitulo, textViewPrecio, textViewDetalles;
 
         ImageView imageView;
 
@@ -73,6 +75,7 @@ public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.Produc
             textViewTitulo = itemView.findViewById(R.id.titulo);
             textViewPrecio = itemView.findViewById(R.id.precio);
             imageView = itemView.findViewById(R.id.imageView);
+            textViewDetalles = itemView.findViewById(R.id.detalles);
         }
 
     }

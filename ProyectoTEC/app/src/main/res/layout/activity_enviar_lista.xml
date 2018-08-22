@@ -25,7 +25,8 @@
         android:text="Enviar lista"
         android:textColor="#B71C1C"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/titulo"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerViewEnviarLista"
@@ -33,7 +34,8 @@
         android:layout_height="211dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="74dp" />
+        android:layout_marginBottom="74dp"
+        android:layout_below="@+id/titulo"/>
 
 
 

@@ -21,13 +21,15 @@ public class SalsasActivity extends AppCompatActivity {
     AdapterProducto adapter;
 
     List<Producto> listaSalsas = new ArrayList<>();
-    Date fecha;
+
+    Date fecha = new Date();
+
 
     //Simulacion de objetos o base de datos
-    Producto salsa1 = new Producto("Salsas",10.00,"Kerns","16oz",0,fecha,R.drawable.kerns);
-    Producto salsa2 = new Producto("Salsas",12.00,"Heinz","16oz",0,fecha,R.drawable.heinz);
-    Producto salsa3 = new Producto("Salsas",15.00,"McCormick","16oz",0,fecha,R.drawable.mccormink);
-    Producto salsa4 = new Producto("Salsas",11.00,"B&B","16oz",0,fecha,R.drawable.byb);
+    Producto salsa1 = new Producto("Salsas",10.00,"Kerns","16oz",0,fecha.toString(),R.drawable.kerns);
+    Producto salsa2 = new Producto("Salsas",12.00,"Heinz","16oz",0,fecha.toString(),R.drawable.heinz);
+    Producto salsa3 = new Producto("Salsas",15.00,"McCormick","16oz",0,fecha.toString(),R.drawable.mccormink);
+    Producto salsa4 = new Producto("Salsas",11.00,"B&B","16oz",0,fecha.toString(),R.drawable.byb);
 
 
     public static int contadorSalsas;

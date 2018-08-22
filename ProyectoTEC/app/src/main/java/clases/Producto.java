@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.Date;
-
 public class Producto {
 
     private String categoria;
@@ -9,11 +7,11 @@ public class Producto {
     private String marca;
     private String tamanio;
     private Integer id;
-    private Date fechaCaducidad;
+    private String fechaCaducidad;
     private int imagen;
 
 
-    public Producto(String categoria, double precio, String marca, String tamanio, Integer id, Date fechaCaducidad, int imagen){
+    public Producto(String categoria, double precio, String marca, String tamanio, Integer id, String fechaCaducidad, int imagen){
         this.setCategoria(categoria);
         this.setPrecio(precio);
         this.setMarca(marca);
@@ -63,11 +61,11 @@ public class Producto {
         this.id = id;
     }
 
-    public Date getFechaCaducidad() {
+    public String getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(Date fechaCaducidad) {
+    public void setFechaCaducidad(String fechaCaducidad) {
         this.fechaCaducidad = fechaCaducidad;
     }
 

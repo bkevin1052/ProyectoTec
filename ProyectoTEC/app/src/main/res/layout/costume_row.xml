@@ -60,9 +60,18 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:layout_toLeftOf="@id/precio"
-
-
                 />
+
+            <TextView
+                android:id="@+id/detalles"
+                android:layout_width="240dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/precio"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/imageView"
+                android:text="titulo"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

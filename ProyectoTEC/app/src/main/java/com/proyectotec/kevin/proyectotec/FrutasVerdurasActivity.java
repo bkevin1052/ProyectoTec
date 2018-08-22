@@ -21,13 +21,13 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
     AdapterProducto adapter;
 
     List<Producto> listaFrutasVerduras = new ArrayList<>();
-    Date fecha;
+    Date fecha = new Date();
 
     //Simulacion de objetos o base de datos
-    Producto fruta1 = new Producto("Frutas y Verduras",10.00,"Manzana","5oz",0,fecha,R.drawable.manzana);
-    Producto fruta2 = new Producto("Frutas y Verduras",12.00,"Banano","32oz",0,fecha,R.drawable.banano);
-    Producto fruta3 = new Producto("Frutas y Verduras",15.00,"Guayaba","5oz",0,fecha,R.drawable.guayaba);
-    Producto fruta4 = new Producto("Frutas y Verduras",11.00,"Sandia","64oz",0,fecha,R.drawable.sandia);
+    Producto fruta1 = new Producto("Frutas y Verduras",10.00,"Manzana","5oz",0,fecha.toString(),R.drawable.manzana);
+    Producto fruta2 = new Producto("Frutas y Verduras",12.00,"Banano","32oz",0,fecha.toString(),R.drawable.banano);
+    Producto fruta3 = new Producto("Frutas y Verduras",15.00,"Guayaba","5oz",0,fecha.toString(),R.drawable.guayaba);
+    Producto fruta4 = new Producto("Frutas y Verduras",11.00,"Sandia","64oz",0,fecha.toString(),R.drawable.sandia);
 
     public static int contadorFrutaVerdura;
 

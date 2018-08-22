@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +25,10 @@ public class ModificarListaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
-
-        TextView opcionVerTodasLasListas = (TextView) findViewById(R.id.opcionVerTodasLista2);
+        recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
+        recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
+        recyclerViewModificarListas.setAdapter(adapter);
 
         adapter.setOnClickListener(view -> {
             listaTemporal= NuevaListaActivity.Listas.get(recyclerViewModificarListas.getChildAdapterPosition(view));
@@ -35,11 +36,7 @@ public class ModificarListaActivity extends AppCompatActivity {
         });
 
 
-        //FALTA AGREGAR METODO PARA MOSTRAR TODAS LAS LISTAS
-            recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
-            recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
-            adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
-            recyclerViewModificarListas.setAdapter(adapter);
+
     }
 
     @Override
