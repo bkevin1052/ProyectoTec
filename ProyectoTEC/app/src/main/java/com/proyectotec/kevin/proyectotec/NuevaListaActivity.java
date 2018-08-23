@@ -40,7 +40,7 @@ public class NuevaListaActivity extends AppCompatActivity {
         crearLista = (TextView)findViewById(R.id.crearLista);
         crearLista.setOnClickListener(view ->{
             String nNuevaLista = nombreNuevaLista.getText().toString();
-            if(nNuevaLista==""){
+            if(nNuevaLista.isEmpty()){
                 Toast.makeText(getApplicationContext(),"No se pudo crear la lista, por favor\n" +" inserte un nombre a su lista",Toast.LENGTH_SHORT).show();
             }else {
                 nuevaLista = new ArrayList<>();
@@ -74,6 +74,11 @@ public class NuevaListaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_contacto){
 
+        }
+        if(id==R.id.menu_cerrarSesion)
+        {
+            finish();
+            startActivity(new Intent(NuevaListaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

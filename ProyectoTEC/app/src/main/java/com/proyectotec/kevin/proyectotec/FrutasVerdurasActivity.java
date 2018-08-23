@@ -1,5 +1,6 @@
 package com.proyectotec.kevin.proyectotec;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -76,6 +77,11 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_contacto){
 
+        }
+        if(id==R.id.menu_cerrarSesion)
+        {
+            finish();
+            startActivity(new Intent(FrutasVerdurasActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

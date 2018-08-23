@@ -14,4 +14,8 @@
         android:id="@+id/menu_acerca"
         android:title="Acerca de nosotros"
         />
+    <item
+        android:id="@+id/menu_cerrarSesion"
+        android:title="Cerrar Sesion"
+        />
 </menu>

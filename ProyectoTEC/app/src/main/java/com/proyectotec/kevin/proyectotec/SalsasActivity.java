@@ -1,5 +1,6 @@
 package com.proyectotec.kevin.proyectotec;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,8 +32,6 @@ public class SalsasActivity extends AppCompatActivity {
     Producto salsa3 = new Producto("Salsas",15.00,"McCormick","16oz",0,fecha.toString(),R.drawable.mccormink);
     Producto salsa4 = new Producto("Salsas",11.00,"B&B","16oz",0,fecha.toString(),R.drawable.byb);
 
-
-    public static int contadorSalsas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +49,8 @@ public class SalsasActivity extends AppCompatActivity {
         recyclerViewProductos.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,listaSalsas);
         adapter.setOnClickListener(view -> {
-            NuevaListaActivity.Listas.get(NuevaListaActivity.contadorListas).add(listaSalsas.get(recyclerViewProductos.getChildAdapterPosition(view)));
-            Toast.makeText(getApplicationContext(),"ELEMENTO AGREGADO CORRECTAMENTE" ,Toast.LENGTH_LONG).show();
-            contadorSalsas++;
+                NuevaListaActivity.Listas.get(NuevaListaActivity.contadorListas).add(listaSalsas.get(recyclerViewProductos.getChildAdapterPosition(view)));
+                Toast.makeText(getApplicationContext(), "ELEMENTO AGREGADO CORRECTAMENTE", Toast.LENGTH_LONG).show();
         });
         recyclerViewProductos.setAdapter(adapter);
 
@@ -79,6 +77,11 @@ public class SalsasActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_contacto){
 
+        }
+        if(id==R.id.menu_cerrarSesion)
+        {
+            finish();
+            startActivity(new Intent(SalsasActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

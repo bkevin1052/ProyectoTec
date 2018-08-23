@@ -75,6 +75,11 @@ public class ListaActivity extends AppCompatActivity {
         if(id==R.id.menu_contacto){
 
         }
+        if(id==R.id.menu_cerrarSesion)
+        {
+            finish();
+            startActivity(new Intent(ListaActivity.this,PrincipalActivity.class));
+        }
         return super.onOptionsItemSelected(item);
     }
 }

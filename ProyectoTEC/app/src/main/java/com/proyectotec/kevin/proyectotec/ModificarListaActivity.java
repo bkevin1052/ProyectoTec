@@ -25,6 +25,7 @@ public class ModificarListaActivity extends AppCompatActivity {
     EditText buscadorM;
 
     public static List<Producto> listaTemporal = new ArrayList<>();
+    public static int numeroLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class ModificarListaActivity extends AppCompatActivity {
         recyclerViewModificarListas.setAdapter(adapter);
 
         adapter.setOnClickListener(view -> {
+            numeroLista = recyclerViewModificarListas.getChildAdapterPosition(view);
             listaTemporal= NuevaListaActivity.Listas.get(recyclerViewModificarListas.getChildAdapterPosition(view));
             startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
         });
@@ -92,6 +94,11 @@ public class ModificarListaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_contacto){
 
+        }
+        if(id==R.id.menu_cerrarSesion)
+        {
+            finish();
+            startActivity(new Intent(ModificarListaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

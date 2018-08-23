@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PrincipalActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MenuActivity"
@@ -70,11 +66,18 @@
         <activity
             android:name=".BuscarListaActivity"
             android:label="Buscar Lista"
-            android:parentActivityName=".MiListaActivity"></activity>
+            android:parentActivityName=".MiListaActivity" />
         <activity
             android:name=".ProductosEnCarretaActivity"
             android:label="Productos en Carreta"
-            android:parentActivityName=".ListaActivity">
+            android:parentActivityName=".ListaActivity"></activity>
+        <activity android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
