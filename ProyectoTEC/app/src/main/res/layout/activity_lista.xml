@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/total"
-        android:layout_width="157dp"
+        android:layout_width="245dp"
         android:layout_height="51dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/carreta"
