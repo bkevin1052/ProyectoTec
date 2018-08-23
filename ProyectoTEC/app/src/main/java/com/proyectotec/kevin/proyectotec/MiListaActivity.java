@@ -15,6 +15,9 @@ public class MiListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mi_lista);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Lleva al activity  Nueva Lista
         TextView opcion11 =(TextView)findViewById(R.id.menuNuevaLista);
         //Asigna un clicklistener al activity Nueva Lista

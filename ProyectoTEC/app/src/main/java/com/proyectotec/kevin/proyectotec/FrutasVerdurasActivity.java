@@ -35,6 +35,8 @@ public class FrutasVerdurasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frutas_verduras);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listaFrutasVerduras.add(fruta1);
         listaFrutasVerduras.add(fruta2);

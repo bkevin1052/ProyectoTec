@@ -1,44 +1,76 @@
 package com.proyectotec.kevin.proyectotec;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import clases.Producto;
 
 public class BuscarListaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewListas;
     AdapterListas adapter;
     EditText buscador;
+    public static List<Producto> listaTemporalDos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_lista);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        buscador = (EditText) findViewById(R.id.idBuscaLista);
+        buscador = (EditText) findViewById(R.id.idBuscaListaB);
 
-        //Lleva al activity ListaOrdenada
-        TextView opcionBuscarLista =(TextView)findViewById(R.id.BuscarLista);
-        //Asigna un clicklistener al activity Lista Ordenada
-        opcionBuscarLista.setOnClickListener(view -> {
+        recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewVerTodas);
+        recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
+        recyclerViewListas.setAdapter(adapter);
+
+        adapter.setOnClickListener(view -> {
+            listaTemporalDos = NuevaListaActivity.Listas.get(recyclerViewListas.getChildAdapterPosition(view));
+            startActivity(new Intent(BuscarListaActivity.this,ListaActivity.class));
         });
 
-        Button opcionVerTodasListas = (Button) findViewById(R.id.botonVerTodasLista);
+        buscador.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-        opcionVerTodasListas.setOnClickListener(view->{
-            recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewVerTodas);
-            recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));
-            adapter = new AdapterListas(this,NuevaListaActivity.Listas,NuevaListaActivity.nombreLista);
-            recyclerViewListas.setAdapter(adapter);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filtro(editable.toString());
+            }
         });
+    }
 
+    private void filtro(String text) {
+        List<List> ListaFiltrada = new ArrayList<>();
+
+        int i =0;
+        for(String item : NuevaListaActivity.nombreLista){
+            if (item.contains(text.toLowerCase())) {
+                ListaFiltrada.add(NuevaListaActivity.Listas.get(i));
+            }
+        }
+        adapter.filtrarListas(ListaFiltrada);
     }
 
     @Override

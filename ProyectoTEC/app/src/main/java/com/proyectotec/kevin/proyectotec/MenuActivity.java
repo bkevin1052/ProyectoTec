@@ -16,6 +16,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+
         //Lleva al activity Mi Lista
         TextView opcion1 =(TextView)findViewById(R.id.menuMiLista);
         //Asigna un clicklistener al activity Mi Lista

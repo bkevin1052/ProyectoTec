@@ -16,6 +16,9 @@ public class UbicacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubicacion);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Lleva al activity Buscar Lista
         TextView opcionBuscar =(TextView)findViewById(R.id.opcionBuscarLista);
         //Asigna un clicklistener al activity Buscar Lista

@@ -21,32 +21,61 @@
             android:label="Menu" />
         <activity
             android:name=".MiListaActivity"
-            android:label="Mi Lista" />
+            android:label="Mi Lista"
+            android:parentActivityName=".MenuActivity" />
         <activity
             android:name=".UbicacionActivity"
-            android:label="Ubicacion" />
+            android:label="Ubicacion"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".ListaActivity"
+            android:label="Mis productos"
+            android:parentActivityName=".BuscarListaActivity" />
         <activity
             android:name=".OfertasActivity"
-            android:label="Ofertas" />
-        <activity
-            android:name=".BuscarListaActivity"
-            android:label="Buscar Lista" />
+            android:label="Ofertas"
+            android:parentActivityName=".MenuActivity" />
         <activity
             android:name=".NuevaListaActivity"
-            android:label="Nueva Lista" />
+            android:label="Nueva Lista"
+            android:parentActivityName=".MiListaActivity" />
         <activity
             android:name=".ModificarListaActivity"
-            android:label="Modificar Lista" />
+            android:label="Modificar Lista"
+            android:parentActivityName=".MiListaActivity" />
         <activity
             android:name=".EnviarListaActivity"
-            android:label="Enviar Lista" />
+            android:label="Enviar Lista"
+            android:parentActivityName=".MiListaActivity" />
         <activity
             android:name=".FotoFacturaActivity"
-            android:label="Foto de Factura" />
-        <activity android:name=".CategoriasActivity" />
-        <activity android:name=".FrutasVerdurasActivity" />
-        <activity android:name=".SalsasActivity" />
-        <activity android:name=".VistaModificarLista"></activity>
+            android:label="Foto de Factura"
+            android:parentActivityName=".MiListaActivity" />
+        <activity
+            android:name=".CategoriasActivity"
+            android:label="Categorias"
+            android:parentActivityName=".MiListaActivity" />
+        <activity
+            android:name=".FrutasVerdurasActivity"
+            android:label=" Frutas y Verduras"
+            android:parentActivityName=".CategoriasActivity" />
+        <activity
+            android:name=".SalsasActivity"
+            android:label="Salsas"
+            android:parentActivityName=".CategoriasActivity" />
+        <activity
+            android:name=".VistaModificarLista"
+            android:label="Modificar Lista"
+            android:parentActivityName=".ModificarListaActivity" />
+        <activity
+            android:name=".BuscarListaActivity"
+            android:label="Buscar Lista"
+            android:parentActivityName=".MiListaActivity"></activity>
+        <activity
+            android:name=".ProductosEnCarretaActivity"
+            android:label="Productos en Carreta"
+            android:parentActivityName=".ListaActivity">
+        </activity>
     </application>
 
 </manifest>

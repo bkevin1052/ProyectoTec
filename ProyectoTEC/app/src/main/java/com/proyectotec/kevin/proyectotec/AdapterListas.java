@@ -24,6 +24,11 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
         this.listasNombre = listasNombre;
     }
 
+    public void filtrarListas(List<List> listaFiltrada) {
+        listasUsuario = listaFiltrada;
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public ListasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +44,6 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
 
         String listaNombre = listasNombre.get(position).toString();
         holder.textViewTitulo.setText(listaNombre);
-        holder.textViewCantidad.setText(String.valueOf(getItemCount()));
     }
 
     @Override
@@ -49,12 +53,11 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
 
     class ListasViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewTitulo,textViewCantidad;
+        TextView textViewTitulo;
 
         public ListasViewHolder(View itemView) {
             super(itemView);
             textViewTitulo = itemView.findViewById(R.id.titulo);
-            textViewCantidad = itemView.findViewById(R.id.cantidad);
         }
     }
 
@@ -69,5 +72,7 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
             listener.onClick(view);
         }
     }
+
+
 
 }

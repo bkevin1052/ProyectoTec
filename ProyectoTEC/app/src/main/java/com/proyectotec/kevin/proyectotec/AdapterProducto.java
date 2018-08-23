@@ -45,6 +45,11 @@ public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.Produc
         holder.imageView.setImageDrawable(miContexto.getResources().getDrawable(producto.getImagen()));
     }
 
+    public void eliminar(List<Producto> lista)
+    {
+        listaProductos = lista;
+    }
+
     @Override
     public int getItemCount() {
         return listaProductos.size();

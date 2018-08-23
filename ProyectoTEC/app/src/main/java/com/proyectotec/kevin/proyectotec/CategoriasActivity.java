@@ -15,6 +15,8 @@ public class CategoriasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Lleva al activity FrutaVerdura
         TextView menuFV =(TextView)findViewById(R.id.menuFrutasVerduras);

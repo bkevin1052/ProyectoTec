@@ -37,6 +37,10 @@ public class SalsasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salsas);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         listaSalsas.add(salsa1);
         listaSalsas.add(salsa2);
         listaSalsas.add(salsa3);

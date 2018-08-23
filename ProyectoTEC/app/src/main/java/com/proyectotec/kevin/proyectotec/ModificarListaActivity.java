@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +22,16 @@ public class ModificarListaActivity extends AppCompatActivity {
     RecyclerView recyclerViewModificarListas;
     AdapterListas adapter;
 
+    EditText buscadorM;
+
     public static List<Producto> listaTemporal = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_lista);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
         recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
@@ -34,9 +41,37 @@ public class ModificarListaActivity extends AppCompatActivity {
             listaTemporal= NuevaListaActivity.Listas.get(recyclerViewModificarListas.getChildAdapterPosition(view));
             startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
         });
+        buscadorM = (EditText)findViewById(R.id.idBuscaListaM);
 
+        buscadorM.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
 
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                filtro(editable.toString());
+            }
+        });
+    }
+
+    private void filtro(String text) {
+        List<List> ListaFiltrada = new ArrayList<>();
+
+        int i =0;
+        for(String item : NuevaListaActivity.nombreLista){
+            if (item.contains(text.toLowerCase())) {
+                ListaFiltrada.add(NuevaListaActivity.Listas.get(i));
+            }
+        }
+        adapter.filtrarListas(ListaFiltrada);
     }
 
     @Override

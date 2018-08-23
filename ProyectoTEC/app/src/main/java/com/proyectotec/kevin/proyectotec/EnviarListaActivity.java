@@ -18,6 +18,8 @@ public class EnviarListaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enviar_lista);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerViewListas = (RecyclerView)findViewById(R.id.RecyclerViewEnviarLista);
         recyclerViewListas.setLayoutManager(new LinearLayoutManager(this));

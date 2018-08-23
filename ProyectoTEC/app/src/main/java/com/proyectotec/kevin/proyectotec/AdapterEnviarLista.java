@@ -39,8 +39,7 @@ public class AdapterEnviarLista extends RecyclerView.Adapter<AdapterEnviarLista.
 
         String listaNombre = listasNombre.get(position).toString();
         holder.textViewTitulo.setText(listaNombre);
-        holder.textViewCantidad.setText(String.valueOf(getItemCount()));
-        holder.textViewIcon.setText(R.string.id_correo);
+        holder.textViewIcon.setText(R.string.id_compartir);
     }
 
     @Override
@@ -50,13 +49,12 @@ public class AdapterEnviarLista extends RecyclerView.Adapter<AdapterEnviarLista.
 
     class EnviarListaViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewTitulo,textViewCantidad,textViewIcon;
+        TextView textViewTitulo,textViewIcon;
 
         public EnviarListaViewHolder(View itemView) {
             super(itemView);
             textViewTitulo = itemView.findViewById(R.id.titulo);
-            textViewCantidad = itemView.findViewById(R.id.cantidad);
-            textViewIcon = itemView.findViewById(R.id.compartirLista);
+            textViewIcon = itemView.findViewById(R.id.compartir);
         }
     }
 
