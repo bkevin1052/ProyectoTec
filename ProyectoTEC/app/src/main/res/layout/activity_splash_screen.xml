@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity"
-    android:background="@drawable/zuperappback">
+    android:background="#ff9d0f">
 
     <TextView
         android:layout_width="333dp"
@@ -18,7 +18,8 @@
         android:text="BIENVENIDO A ZUPER APP"
         android:textColor="#B71C1C"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/tituloSuperior"/>
 
     <TextView
         android:layout_width="333dp"
@@ -30,15 +31,16 @@
         android:text="DONDE TUS COMPRAS SERÁN MAS SENCILLAS"
         android:textColor="#B71C1C"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/tituloInferior"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image"
+        android:id="@+id/logoImagen"
         android:layout_width="161dp"
         android:layout_height="164dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="193dp"
+        android:layout_marginTop="196dp"
         android:src="@drawable/zuper_inicial"
         app:civ_border_width="2dp" />
 </RelativeLayout>
