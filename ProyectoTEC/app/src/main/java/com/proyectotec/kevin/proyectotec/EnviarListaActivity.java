@@ -45,7 +45,7 @@ public class EnviarListaActivity extends AppCompatActivity {
                 Producto tempProducto = tempLista.get(i);
                 listaCompartir += "\n\n*Categoria: " +tempProducto.getCategoria() +"\n"+
                         "Marca: " + tempProducto.getMarca() +"\n"+
-                        "Precio: q" + tempProducto.getPrecio() +"\n"+
+                        "Precio: Q" + tempProducto.getPrecio() +"\n"+
                         "Tamaño: " + tempProducto.getTamanio();
             }
             compartir.putExtra(Intent.EXTRA_TEXT, listaCompartir.toString());
