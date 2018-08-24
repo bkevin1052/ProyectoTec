@@ -44,20 +44,22 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ListasView
 
         String listaNombre = listasNombre.get(position).toString();
         holder.textViewTitulo.setText(listaNombre);
+        double total = SalsasActivity.totalPrecioSalsas+FrutasVerdurasActivity.totalPrecioFrutaVerdura;
+        holder.textViewTotalLista.setText("Q "+String.valueOf(total));
     }
 
     @Override
     public int getItemCount() {
         return listasUsuario.size();
     }
-
     class ListasViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewTitulo;
+        TextView textViewTitulo,textViewTotalLista;
 
         public ListasViewHolder(View itemView) {
             super(itemView);
             textViewTitulo = itemView.findViewById(R.id.titulo);
+            textViewTotalLista = itemView.findViewById(R.id.totalLista);
         }
     }
 

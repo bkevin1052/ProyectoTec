@@ -7,10 +7,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import Preference.PreferenceManager;
 
 public class VistaModificarLista extends AppCompatActivity {
 
@@ -28,6 +31,8 @@ public class VistaModificarLista extends AppCompatActivity {
         eliminar = (TextView)findViewById(R.id.eliminarLista);
         agregar = (TextView)findViewById(R.id.agregarLista);
         recyclerViewModificarLista = (RecyclerView)findViewById(R.id.RecyclerViewModificarProductos);
+
+
         recyclerViewModificarLista.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,ModificarListaActivity.listaTemporal);
         recyclerViewModificarLista.setAdapter(adapter);
@@ -36,26 +41,19 @@ public class VistaModificarLista extends AppCompatActivity {
             AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
             dlgAlert.setMessage("Esta seguro de eliminar la lista?");
             dlgAlert.setTitle("Eliminar Lista");
-            dlgAlert.setPositiveButton("SI", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    NuevaListaActivity.Listas.remove(ModificarListaActivity.numeroLista);
-                    NuevaListaActivity.nombreLista.remove(ModificarListaActivity.numeroLista);
-                    NuevaListaActivity.contadorListas--;
-                    finish();
-                    startActivity(new Intent(VistaModificarLista.this,ModificarListaActivity.class));
-                }
+            dlgAlert.setPositiveButton("SI", (dialogInterface, i) -> {
+                NuevaListaActivity.Listas.remove(ModificarListaActivity.numeroLista);
+                NuevaListaActivity.nombreLista.remove(ModificarListaActivity.numeroLista);
+                NuevaListaActivity.contadorListas--;
+                finish();
+                startActivity(new Intent(VistaModificarLista.this,ModificarListaActivity.class));
             });
-            dlgAlert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.cancel();
-                }
-            });
+            dlgAlert.setNegativeButton("NO", (dialogInterface, i) -> dialogInterface.cancel());
             dlgAlert.setCancelable(true);
             dlgAlert.create().show();
         });
 
+        agregar.setEnabled(false);
         //FALTA IMPLEMENTAR
         agregar.setOnClickListener(view -> {
             startActivity(new Intent(VistaModificarLista.this,CategoriasActivity.class));
@@ -84,9 +82,19 @@ public class VistaModificarLista extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(VistaModificarLista.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(VistaModificarLista.this,ModificarListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

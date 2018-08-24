@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import Preference.PreferenceManager;
 import clases.Producto;
 
 public class ModificarListaActivity extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class ModificarListaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_modificar_lista);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerViewModificarListas = (RecyclerView) findViewById(R.id.RecyclerViewModificarLista);
         recyclerViewModificarListas.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterListas(this, NuevaListaActivity.Listas, NuevaListaActivity.nombreLista);
@@ -42,6 +45,7 @@ public class ModificarListaActivity extends AppCompatActivity {
             numeroLista = recyclerViewModificarListas.getChildAdapterPosition(view);
             listaTemporal= NuevaListaActivity.Listas.get(recyclerViewModificarListas.getChildAdapterPosition(view));
             startActivity(new Intent(ModificarListaActivity.this,VistaModificarLista.class));
+
         });
         buscadorM = (EditText)findViewById(R.id.idBuscaListaM);
 
@@ -97,9 +101,19 @@ public class ModificarListaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(ModificarListaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(ModificarListaActivity.this,MiListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

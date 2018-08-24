@@ -3,9 +3,12 @@ package com.proyectotec.kevin.proyectotec;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import Preference.PreferenceManager;
 
 public class FotoFacturaActivity extends AppCompatActivity {
 
@@ -15,6 +18,7 @@ public class FotoFacturaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_foto_factura);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -38,9 +42,19 @@ public class FotoFacturaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(FotoFacturaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(FotoFacturaActivity.this,MiListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

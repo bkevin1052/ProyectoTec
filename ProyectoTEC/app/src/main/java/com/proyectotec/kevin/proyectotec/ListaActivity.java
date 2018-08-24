@@ -43,10 +43,10 @@ public class ListaActivity extends AppCompatActivity {
         adapter.setOnClickListener(view -> {
             precioTemp += BuscarListaActivity.listaTemporalDos.get(recyclerViewLista.getChildAdapterPosition(view)).getPrecio();
             listaTemporalCarreta.add(BuscarListaActivity.listaTemporalDos.remove(recyclerViewLista.getChildAdapterPosition(view)));
-            Toast.makeText(getApplicationContext(),"ELEMENTO AGREGADO A CARRETA" ,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"ELEMENTO AGREGADO A CARRETA" ,Toast.LENGTH_SHORT).show();
             adapter.eliminar(BuscarListaActivity.listaTemporalDos);
             recyclerViewLista.setAdapter(adapter);
-            total.setText("TOTAL: Q " + String.valueOf(precioTemp));
+            total.setText("Total Lista(Aprox): Q " + String.valueOf(precioTemp));
         });
 
         carreta.setOnClickListener(view -> {

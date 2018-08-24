@@ -5,14 +5,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import Preference.PreferenceManager;
 
 public class ProductosEnCarretaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewProductosEnCarreta;
     AdapterProducto adapter;
+    TextView total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +26,13 @@ public class ProductosEnCarretaActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        total = (TextView)findViewById(R.id.total);
         recyclerViewProductosEnCarreta = (RecyclerView)findViewById(R.id.RecyclerViewListaProductos);
         recyclerViewProductosEnCarreta.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterProducto(this,ListaActivity.listaTemporalCarreta);
         recyclerViewProductosEnCarreta.setAdapter(adapter);
+
+        total.setText("Total Carreta(Aprox): Q " + ListaActivity.precioTemp);
 
 
     }
@@ -50,9 +58,19 @@ public class ProductosEnCarretaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(ProductosEnCarretaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(ProductosEnCarretaActivity.this,ListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

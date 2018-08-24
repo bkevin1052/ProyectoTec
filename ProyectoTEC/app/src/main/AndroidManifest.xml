@@ -9,40 +9,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrincipalActivity">
-
-        </activity>
+        <activity
+            android:name=".PrincipalActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MenuActivity"
-            android:label="Menu" />
+            android:label="Menu"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MiListaActivity"
             android:label="Mi Lista"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UbicacionActivity"
             android:label="Ubicacion"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ListaActivity"
             android:label="Mis productos"
-            android:parentActivityName=".BuscarListaActivity" />
+            android:parentActivityName=".BuscarListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OfertasActivity"
             android:label="Ofertas"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NuevaListaActivity"
             android:label="Nueva Lista"
-            android:parentActivityName=".MiListaActivity" />
+            android:parentActivityName=".MiListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ModificarListaActivity"
             android:label="Modificar Lista"
-            android:parentActivityName=".MiListaActivity" />
+            android:parentActivityName=".MiListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EnviarListaActivity"
             android:label="Enviar Lista"
-            android:parentActivityName=".MiListaActivity" />
+            android:parentActivityName=".MiListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FotoFacturaActivity"
             android:label="Foto de Factura"
@@ -50,19 +58,23 @@
         <activity
             android:name=".CategoriasActivity"
             android:label="Categorias"
-            android:parentActivityName=".MiListaActivity" />
+            android:parentActivityName=".MiListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FrutasVerdurasActivity"
             android:label=" Frutas y Verduras"
-            android:parentActivityName=".CategoriasActivity" />
+            android:parentActivityName=".CategoriasActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SalsasActivity"
             android:label="Salsas"
-            android:parentActivityName=".CategoriasActivity" />
+            android:parentActivityName=".CategoriasActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VistaModificarLista"
             android:label="Modificar Lista"
-            android:parentActivityName=".ModificarListaActivity" />
+            android:parentActivityName=".ModificarListaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BuscarListaActivity"
             android:label="Buscar Lista"
@@ -70,8 +82,11 @@
         <activity
             android:name=".ProductosEnCarretaActivity"
             android:label="Productos en Carreta"
-            android:parentActivityName=".ListaActivity"></activity>
-        <activity android:name=".SplashScreenActivity"
+            android:parentActivityName=".ListaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,6 +94,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistroActivity"></activity>
     </application>
 
 </manifest>

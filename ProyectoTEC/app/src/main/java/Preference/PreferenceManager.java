@@ -3,6 +3,10 @@ package Preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.proyectotec.kevin.proyectotec.NuevaListaActivity;
+
+import java.util.List;
+
 /**
  * -------------------------------------------------------------------------------------------------
  * Created by Huberto on 24/02/17.
@@ -14,9 +18,12 @@ public class PreferenceManager {
      * (estas variables son similares a las variables de sesion en web)
      */
 
-    //public static final String PREF_USER_ID="user_id";
-    public static final String PREF_USERNAME ="username";
-    public static final String PREF_PASSWORD = "username";
+    public static final String PREF_USERNAME ="bkevin1052";
+    public static final String PREF_PASSWORD = "123456";
+    public static final List<List> PREF_USUARIO_LISTAS = NuevaListaActivity.Listas;
+    public static final List<String> PREF_USUARIO_NOMBRELISTAS = NuevaListaActivity.nombreLista;
+    public static final int PREF_CONTADOR = NuevaListaActivity.contadorListas;
+
 
     /**
      * Nombre de la instancia de SharedPreference (es similar al nombre de la sesion en web)
@@ -48,4 +55,5 @@ public class PreferenceManager {
                 Context.MODE_PRIVATE);
         return sharedPref.contains(prefName);
     }
+
 }

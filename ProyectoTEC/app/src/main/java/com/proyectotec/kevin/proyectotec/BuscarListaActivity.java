@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import Preference.PreferenceManager;
 import clases.Producto;
 
 public class BuscarListaActivity extends AppCompatActivity {
@@ -94,9 +96,19 @@ public class BuscarListaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(BuscarListaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(BuscarListaActivity.this,MiListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

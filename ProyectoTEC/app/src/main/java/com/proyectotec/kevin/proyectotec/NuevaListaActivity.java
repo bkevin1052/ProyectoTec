@@ -3,6 +3,7 @@ package com.proyectotec.kevin.proyectotec;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import Preference.PreferenceManager;
 import clases.Producto;
 
 public class NuevaListaActivity extends AppCompatActivity {
@@ -36,6 +38,7 @@ public class NuevaListaActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         nombreNuevaLista = (EditText)findViewById(R.id.idNombreLista);
         crearLista = (TextView)findViewById(R.id.crearLista);
         crearLista.setOnClickListener(view ->{
@@ -49,11 +52,10 @@ public class NuevaListaActivity extends AppCompatActivity {
                 Intent _Categorias = new Intent(NuevaListaActivity.this, CategoriasActivity.class);
                 startActivity(_Categorias);
                 contadorListas++;
+                SalsasActivity.totalPrecioSalsas = 0;
+                FrutasVerdurasActivity.totalPrecioFrutaVerdura = 0;
             }
         });
-
-
-
     }
 
     @Override
@@ -77,9 +79,19 @@ public class NuevaListaActivity extends AppCompatActivity {
         }
         if(id==R.id.menu_cerrarSesion)
         {
-            finish();
+            PreferenceManager.delPref(getApplicationContext(),PreferenceManager.PREF_USERNAME);
+            PreferenceManager.delPref(getApplicationContext(), PreferenceManager.PREF_PASSWORD);
             startActivity(new Intent(NuevaListaActivity.this,PrincipalActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(NuevaListaActivity.this,MiListaActivity.class));
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
