@@ -5,14 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenActivity" >
+    tools:context=".SplashScreenActivity"
+    android:background = "@drawable/fondocarreta">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/fondocarreta"
-        android:id="@+id/idFondo"
-        android:scaleType="centerCrop"/>
+
 
     <TextView
         android:layout_width="match_parent"
