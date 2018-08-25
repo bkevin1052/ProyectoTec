@@ -12,20 +12,23 @@ import android.widget.TextView;
 
 public class SplashScreenActivity extends Activity {
 
-    ImageView imagen;
+    ImageView imagen, imagenFondo;
     TextView superior,inferior;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+
+        superior = (TextView)findViewById(R.id.tituloBienvenido);
+        inferior = (TextView)findViewById(R.id.tituloZuper);
         imagen = (ImageView)findViewById(R.id.logoImagen);
-        superior = (TextView)findViewById(R.id.tituloSuperior);
-        inferior = (TextView)findViewById(R.id.tituloInferior);
+        imagenFondo = (ImageView)findViewById(R.id.idFondo);
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.up_to_down);
 
         imagen.setAnimation(animation);
+        imagenFondo.setAnimation(animation);
         superior.setAnimation(animation);
         inferior.setAnimation(animation);
 
